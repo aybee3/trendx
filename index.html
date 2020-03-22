@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Trend X</title>
+  <meta content="" name="clothes">
+  <meta content="" name="apparel">
+  <meta content="" name="recommender">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Source+Sans+Pro&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Ninestars - v2.0.0
+  * Template URL: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container-fluid d-flex">
+
+      <div class="logo mr-auto">
+        <h1 class="text-light"><a href="index.html" id="navTitle"><span>Trend X</span></a></h1>
+      </div>
+
+      <!-- Navbar Items -->
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#header">Home</a></li>
+          <li><a href="#start">Start</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#working">Working</a></li>
+          <li><a href="#team">Team</a></li>
+          <li class="get-started"><a href="#start">Get Started</a></li>
+        </ul>
+      </nav>
+      <!-- Navbar Items -->
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center bg-dark pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-5 order-2 order-lg-1">
+          <h1>Welcome!</h1>
+          <h2>Trend X is a free service which recommends outfits based on your color preferences.</h2>
+          <a href="#start" class="btn btn-get-started scrollto btn-lg">Get Started</a>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img mx-auto">
+          <img src="assets/img/hero-img.svg" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- End Hero -->
+
+  <main id="main" class="bg-dark">
+
+    <!-- ======= About Section ======= -->
+    <section id="start" class="about">
+      <div class="container">
+
+        <div class="column mx-auto">
+          <div class="row-lg-5 w-50 mx-auto d-flex align-items-center justify-content-center about-img">
+
+          </div>
+          <div class="row-lg-6 pt-5 pt-lg-0 text-center">
+            <h3 data-aos="fade-up">Enter your preferences</h3>
+            <p data-aos="fade-up" data-aos-delay="100">
+              Select your category and the color around which your outfit will be designed.
+            </p>
+            <div class="row">
+              <div class="col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="100">
+                <i class="bx bx-select-multiple"></i>
+                <h4>Select Category</h4>
+                <select id="category" style="display:inline;" class="btn w-50 btn-lg btn-outline-info mb-3">
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                  <option value="K">Kids</option>
+                </select>
+                <div class="mx-auto w-50 mb-5">
+                  <div>
+                    <svg version="1.1" viewBox="0 0 373.27 473" style="enable-background:new 0 0 373.27 473;"
+                      xml:space="preserve" id="dynamicSVG">
+                      <!-- ======= SVG of Logo ======= -->
+                      <path class="st0" d="M366.7,0L263.83,170.38l-39.43-68.21L284.65,0H366.7z M99.38,0H18.72l274.94,473h79.61L99.38,0z M115.66,280.81
+	L0,473h81.01l73.79-123.98L115.66,280.81z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <i class="bx bx-palette"></i>
+                <h4>Select Color</h4>
+                <div class="card bg-dark border-0 pt-5 mt-3">
+                  <!-- ======= iro.js Color Picker ======= -->
+                  <div class="card-body m-auto" id="userInput">
+                    <div class="wrap">
+                      <div id="colorPicker"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- ======= Result Section ======= -->
+    <section id="results" class="portfolio">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Here are the</h2>
+          <p>Results</p>
+        </div>
+
+        <!-- ======= Filter results ======= -->
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-tWear">Topwear</li>
+              <li data-filter=".filter-bWear">Bottomwear</li>
+              <li data-filter=".filter-fWear">Footwear</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <!-- ======= Topwear #1 ======= -->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-tWear">
+            <div class="portfolio-wrap">
+              <img src="assets/img/results/placeholder-1.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/results/placeholder-1.png" data-gall="portfolioGallery" class="venobox"
+                  title="Expand image"><i class="bx bx-expand"></i></a>
+                <a href="#" title="Buy Now"><i class="bx bx-link-external"></i></a>
+              </div>
+              <div class="portfolio-info">
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ======= Bottomwear #1 ======= -->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bWear">
+            <div class="portfolio-wrap">
+              <img src="assets/img/results/placeholder-2.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/results/placeholder-2.png" data-gall="portfolioGallery" class="venobox"
+                  title="Expand image"><i class="bx bx-expand"></i></a>
+                <a href="#" title="Buy Now"><i class="bx bx-link-external"></i></a>
+              </div>
+              <div class="portfolio-info">
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ======= Footwear #1 ======= -->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fWear">
+            <div class="portfolio-wrap">
+              <img src="assets/img/results/placeholder-3.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/results/placeholder-3.png" data-gall="portfolioGallery" class="venobox"
+                  title="App 2"><i class="bx bx-expand"></i></a>
+                <a href="#" title="Buy Now"><i class="bx bx-link-external"></i></a>
+              </div>
+              <div class="portfolio-info">
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============================
+
+                NOTE: These are additional cards to display more results.
+                As it stands, we're not using a proper DB manager
+                So, testing with 3 items first
+
+                Uncomment if and when we populate JSON proper
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fWear">
+            <div class="portfolio-wrap">
+              <img src="assets/img/results/placeholder-3.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/results/placeholder-3.png" data-gall="portfolioGallery" class="venobox"
+                  title="Card 2"><i class="bx bx-expand"></i></a>
+                <a href="#" title="Buy Now"><i class="bx bx-link-external"></i></a>
+              </div>
+              <div class="portfolio-info">
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-tWear">
+            <div class="portfolio-wrap">
+              <img src="assets/img/results/placeholder-1.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/results/placeholder-1.png" data-gall="portfolioGallery" class="venobox"
+                  title="Web 2"><i class="bx bx-expand"></i></a>
+                <a href="#" title="Buy Now"><i class="bx bx-link-external"></i></a>
+              </div>
+              <div class="portfolio-info">
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bWear">
+            <div class="portfolio-wrap">
+              <img src="assets/img/results/placeholder-2.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/results/placeholder-2.png" data-gall="portfolioGallery" class="venobox"
+                  title="App 3"><i class="bx bx-expand"></i></a>
+                <a href="#" title="Buy Now"><i class="bx bx-link-external"></i></a>
+              </div>
+              <div class="portfolio-info">
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-bWear">
+            <div class="portfolio-wrap">
+              <img src="assets/img/results/placeholder-2.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/results/placeholder-2.png" data-gall="portfolioGallery" class="venobox"
+                  title="Card 1"><i class="bx bx-expand"></i></a>
+                <a href="#" title="Buy Now"><i class="bx bx-link-external"></i></a>
+              </div>
+              <div class="portfolio-info">
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fWear">
+            <div class="portfolio-wrap">
+              <img src="assets/img/results/placeholder-3.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/results/placeholder-3.png" data-gall="portfolioGallery" class="venobox"
+                  title="Card 3"><i class="bx bx-expand"></i></a>
+                <a href="#" title="Buy Now"><i class="bx bx-link-external"></i></a>
+              </div>
+              <div class="portfolio-info">
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-tWear">
+            <div class="portfolio-wrap">
+              <img src="assets/img/results/placeholder-1.png" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/results/placeholder-1.png" data-gall="portfolioGallery" class="venobox"
+                  title="Web 3"><i class="bx bx-expand"></i></a>
+                <a href="#" title="Buy Now"><i class="bx bx-link-external"></i></a>
+              </div>
+              <div class="portfolio-info">
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+
+          ====
+          ==========
+          ===================
+          ======================================== -->
+
+
+        </div>
+      </div>
+    </section>
+    <!-- End Result Section -->
+
+    <!-- ======= How it works section ======= -->
+    <section id="working" class="services section-bg bg-dark">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>How it works?</h2>
+          <p>Working</p>
+        </div>
+
+        <!-- ======= Card 1 ======= -->
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box bg-dark">
+              <div class="icon"><i class="bx bxs-user-badge"></i></div>
+              <h4 class="title"><a href="">User Input</a></h4>
+              <p class="description">User selects their preferred category and color using the web interface</p>
+            </div>
+          </div>
+
+          <!-- ======= Card 2 ======= -->
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box bg-dark">
+              <div class="icon"><i class="bx bxs-color-fill"></i></div>
+              <h4 class="title"><a href="">Color Harmony</a></h4>
+              <p class="description">Using our algorithm based on color theory, we find complementary colors</p>
+            </div>
+          </div>
+
+          <!-- ======= Card 3 ======= -->
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box bg-dark">
+              <div class="icon"><i class="bx bx-file-find"></i></div>
+              <h4 class="title"><a href="">Database Search</a></h4>
+              <p class="description">Using the data from user input and color harmony algorithm, we search through our
+                database
+              </p>
+            </div>
+          </div>
+
+          <!-- ======= Card 4 ======= -->
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
+            <div class="icon-box bg-dark">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="">Populate Results</a></h4>
+              <p class="description">Items selected from our database are then populated on the webpage</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team bg-dark">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Meet the</h2>
+          <p>Team</p>
+        </div>
+
+        <div class="row">
+
+          <!-- ======= Abdul ======= -->
+          <div class="col-xl-4 col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member">
+              <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Abdul Baquar</h4>
+                  <span>1MS18EE001</span>
+                </div>
+                <div class="social">
+                  <a href=""><i class="icofont-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ======= Abhishek ======= -->
+          <div class="col-xl-4 col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="member">
+              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Abhishek Choudhary</h4>
+                  <span>1MS18EE003</span>
+                </div>
+                <div class="social">
+                  <a href=""><i class="bx bxl-github"></i></a>
+                  <a href=""><i class="icofont-reddit"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ======= Aditya ======= -->
+          <div class="col-xl-4 col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="member">
+              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Aditya "Netaji" Raj</h4>
+                  <span>1MS18EE005</span>
+                </div>
+                <div class="social">
+                  <a href=""><i class="icofont-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- End Team Section -->
+
+  </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top bg-dark">
+      <div class="container">
+        <div class="row mx-auto">
+
+          <!-- ======= Left footer ======= -->
+          <div class="col-lg-4 col-md-5 footer-contact" data-aos="fade-up" data-aos-delay="100">
+            <h3>Trend X</h3>
+            <p>
+              A proof of concept service.
+              <br> A product design project for Electrical and Electronics Department of MS Ramaiah Institute of
+              Technology.
+              <br>
+              <br>
+            </p>
+          </div>
+
+          <!-- ======= Middle footer ======= -->
+          <div class="col-lg-4 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
+            <h4>Tools and Frameworks Used</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://en.wikipedia.org/wiki/HTML5">HTML 5</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a
+                  href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets#CSS_3">CSS 3</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://getbootstrap.com/">Bootstrap</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.javascript.com/">JavaScript</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://iro.js.org/">iro.js Color Picker</a></li>
+            </ul>
+          </div>
+
+          <!-- ======= Right footer ======= -->
+          <div class="col-lg-4 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="400">
+            <h4>Source Code</h4>
+            <p>
+              Code used to build this website is available on GitHub.
+              <a class="btn btn-outline-info m-2 p-2" href="https://github.com/Az-21/az-21.github.io">
+                View Code on GitHub
+              </a>
+            </p>
+            <br>
+            <a class="text-secondary" href="https://bootstrapmade.com/demo/Ninestars/">Bootstrap template by
+              Ninestars</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/iro.js"></script>
+  <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
