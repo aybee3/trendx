@@ -23,17 +23,28 @@ if (h > w) { // on portrait
 }
 
 
-// ========== Log colors ==========
+// ========== Log user input ==========
 
-// Register change when releasing click
+// Register change when clicking or touching the color wheel
 colorWheel.addEventListener('touchend', registerColor);
 colorWheel.addEventListener('mouseup', registerColor);
+
+
+// Register category
+var catIndex;
+document.querySelector("#category").onchange = function () {
+	catIndex = this.selectedIndex;
+	registerColor();
+	// 1 = male
+	// 2 = female
+	// 3 = kids
+};
+
 
 // Function to log on event
 var selectedHEX; // user input
 var hue; // hue of user input
 var mainColor; // color selected [string]
-var secColor; // complementary color [string]
 
 function registerColor(e) {
 	var selectedHEX = colorPicker.color.hexString;
@@ -45,10 +56,11 @@ function registerColor(e) {
 	hamburg.style.color = selectedHEX;
 	toTopBtn.style.background = selectedHEX;
 	hue = HEXtoHUE(selectedHEX);
-	console.log(hue);
 	colorCategory(hue);
+
+	console.log(`Category index: ${catIndex}`);
+	console.log(`Hue: ${hue}`);
 	console.log(mainColor);
-	console.log(secColor);
 	console.log("-       x        -\n-       x        -");
 }
 
@@ -108,25 +120,20 @@ function HEXtoHUE(hex) {
 function colorCategory(hue) {
 	if (hue >= 330) {
 		mainColor = "red";
-		secColor = "black";
+
 	} else if (hue >= 0 && hue < 30) {
 		mainColor = "orange";
-		secColor = "red";
+
 	} else if (hue >= 30 && hue < 70) {
 		mainColor = "yellow";
-		secColor = "green";
 	} else if (hue >= 70 && hue < 170) {
 		mainColor = "green";
-		secColor = "white";
 	} else if (hue >= 170 && hue < 260) {
 		mainColor = "blue";
-		secColor = "white";
 	} else if (hue >= 260 && hue < 295) {
 		mainColor = "purple";
-		secColor = "white";
 	} else {
 		mainColor = "pink";
-		secColor = "red";
 	}
 
 
