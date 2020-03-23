@@ -154,8 +154,8 @@ function colorCategory(hue) {
 	}
 }
 
-var imageDir = "/assets/img/clothes/";
-var linkDir = "/assets/img/clothes/links/"
+var imageDir = "./assets/img/clothes/";
+var linkDir = "./assets/img/clothes/links/"
 
 
 function contentReplacer(catIndex, colorIndex) {
