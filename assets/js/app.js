@@ -14,9 +14,13 @@ const navTitle = document.querySelector("#navTitle");
 const hamburg = document.querySelector('.icofont-navigation-menu');
 const toTopBtn = document.querySelector('.back-to-top');
 
-const t1Image = document.querySelectorAll("#topwear-1-image");
-const b1Image = document.querySelectorAll("#bottomwear-1-image");
-const f1Image = document.querySelectorAll("#footwear-1-image");
+const t1ImageCard = document.querySelector("#topwear-1-img-card");
+const b1ImageCard = document.querySelector("#bottomwear-1-img-card");
+const f1ImageCard = document.querySelector("#footwear-1-img-card");
+
+const t1ImageExp = document.querySelector("#topwear-1-img-expand");
+const b1ImageExp = document.querySelector("#bottomwear-1-img-expand");
+const f1ImageExp = document.querySelector("#footwear-1-img-expand");
 
 const t1Link = document.querySelector("#topwear-1-link");
 const b1Link = document.querySelector("#bottomwear-1-link");
@@ -126,10 +130,10 @@ function HEXtoHUE(hex) {
 
 // ========== Categorize colors ============
 function colorCategory(hue) {
-	if (hue >= 330) {
+	if (hue >= 330 || hue < 10) {
 		mainColor = "red";
 		colorIndex = 0;
-	} else if (hue >= 0 && hue < 30) {
+	} else if (hue >= 10 && hue < 30) {
 		mainColor = "orange";
 		colorIndex = 1;
 	} else if (hue >= 30 && hue < 70) {
@@ -156,9 +160,19 @@ var linkDir = "/assets/img/clothes/links/"
 
 function contentReplacer(catIndex, colorIndex) {
 
-	// Replace links
-	t1Link.href = linkDir + catIndex + "-" + colorIndex + "-top.html";
-	b1Link.href = linkDir + catIndex + "-" + colorIndex + "-bottom.html";
-	f1Link.href = linkDir + catIndex + "-" + colorIndex + "-foot.html";
+	if (catIndex != undefined) { // wait for user input in category section
+		// Replace links
+		t1Link.href = linkDir + catIndex + "-" + colorIndex + "-top.html";
+		b1Link.href = linkDir + catIndex + "-" + colorIndex + "-bottom.html";
+		f1Link.href = linkDir + catIndex + "-" + colorIndex + "-foot.html";
 
+		// Replace images
+		t1ImageCard.src = imageDir + catIndex + "-" + colorIndex + "-top.jpg";
+		b1ImageCard.src = imageDir + catIndex + "-" + colorIndex + "-bottom.jpg";
+		f1ImageCard.src = imageDir + catIndex + "-" + colorIndex + "-foot.jpg";
+
+		t1ImageExp.href = imageDir + catIndex + "-" + colorIndex + "-top.jpg";
+		b1ImageExp.href = imageDir + catIndex + "-" + colorIndex + "-bottom.jpg";
+		f1ImageExp.href = imageDir + catIndex + "-" + colorIndex + "-foot.jpg";
+	}
 }
