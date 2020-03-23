@@ -14,6 +14,14 @@ const navTitle = document.querySelector("#navTitle");
 const hamburg = document.querySelector('.icofont-navigation-menu');
 const toTopBtn = document.querySelector('.back-to-top');
 
+const t1Image = document.querySelectorAll("#topwear-1-image");
+const b1Image = document.querySelectorAll("#bottomwear-1-image");
+const f1Image = document.querySelectorAll("#footwear-1-image");
+
+const t1Link = document.querySelector("#topwear-1-link");
+const t2Link = document.querySelector("#bottomwear-1-link");
+const t3Link = document.querySelector("#footwear-1-link");
+
 
 // ========== Remove "X" on small screens ==========
 var w = window.innerWidth;
@@ -31,13 +39,12 @@ colorWheel.addEventListener('mouseup', registerColor);
 
 
 // Register category
-var catIndex;
+var catIndex; // category index
+// 1 = male, 2 = female, 3 = kids
+
 document.querySelector("#category").onchange = function () {
 	catIndex = this.selectedIndex;
 	registerColor();
-	// 1 = male
-	// 2 = female
-	// 3 = kids
 };
 
 
@@ -45,6 +52,7 @@ document.querySelector("#category").onchange = function () {
 var selectedHEX; // user input
 var hue; // hue of user input
 var mainColor; // color selected [string]
+var colorIndex; // 0 = red, 1 = orange, 2 = yellow, 3 = green, 4 = blue, 5 = purple, 6 = pink
 
 function registerColor(e) {
 	var selectedHEX = colorPicker.color.hexString;
@@ -57,6 +65,8 @@ function registerColor(e) {
 	toTopBtn.style.background = selectedHEX;
 	hue = HEXtoHUE(selectedHEX);
 	colorCategory(hue);
+	populateResults();
+	contentReplacer(catIndex, colorIndex);
 
 	console.log(`Category index: ${catIndex}`);
 	console.log(`Hue: ${hue}`);
@@ -116,25 +126,41 @@ function HEXtoHUE(hex) {
 
 
 // ========== Categorize colors ============
-
 function colorCategory(hue) {
 	if (hue >= 330) {
 		mainColor = "red";
-
+		colorIndex = 0;
 	} else if (hue >= 0 && hue < 30) {
 		mainColor = "orange";
-
+		colorIndex = 1;
 	} else if (hue >= 30 && hue < 70) {
 		mainColor = "yellow";
+		colorIndex = 2;
 	} else if (hue >= 70 && hue < 170) {
 		mainColor = "green";
+		colorIndex = 3;
 	} else if (hue >= 170 && hue < 260) {
 		mainColor = "blue";
+		colorIndex = 4;
 	} else if (hue >= 260 && hue < 295) {
 		mainColor = "purple";
+		colorIndex = 5;
 	} else {
 		mainColor = "pink";
+		colorIndex = 6;
+	}
+}
+
+var imageDir = "/assets/img/clothes/";
+var linkDir = "/assets/img/clothes/links/"
+
+function populateResults() {
+	if (catIndex == 1 && colorIndex == 0) { // male-red
+
 	}
 
+}
 
+function contentReplacer(catIndex, colorIndex) {
+	t1Link.href = linkDir + catIndex + "-" + colorIndex + ".html";
 }
