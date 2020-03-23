@@ -1,7 +1,7 @@
 // Render the color wheel
 var colorPicker = new iro.ColorPicker('#colorPicker', {
 	width: 280,
-	color: 'rgb(255, 255, 255)',
+	color: 'rgb(61, 219, 133)',
 	borderWidth: 5,
 	borderColor: '#fff'
 });
