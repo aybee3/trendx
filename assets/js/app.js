@@ -19,8 +19,8 @@ const b1Image = document.querySelectorAll("#bottomwear-1-image");
 const f1Image = document.querySelectorAll("#footwear-1-image");
 
 const t1Link = document.querySelector("#topwear-1-link");
-const t2Link = document.querySelector("#bottomwear-1-link");
-const t3Link = document.querySelector("#footwear-1-link");
+const b1Link = document.querySelector("#bottomwear-1-link");
+const f1Link = document.querySelector("#footwear-1-link");
 
 
 // ========== Remove "X" on small screens ==========
@@ -65,7 +65,6 @@ function registerColor(e) {
 	toTopBtn.style.background = selectedHEX;
 	hue = HEXtoHUE(selectedHEX);
 	colorCategory(hue);
-	populateResults();
 	contentReplacer(catIndex, colorIndex);
 
 	console.log(`Category index: ${catIndex}`);
@@ -154,13 +153,12 @@ function colorCategory(hue) {
 var imageDir = "/assets/img/clothes/";
 var linkDir = "/assets/img/clothes/links/"
 
-function populateResults() {
-	if (catIndex == 1 && colorIndex == 0) { // male-red
-
-	}
-
-}
 
 function contentReplacer(catIndex, colorIndex) {
-	t1Link.href = linkDir + catIndex + "-" + colorIndex + ".html";
+
+	// Replace links
+	t1Link.href = linkDir + catIndex + "-" + colorIndex + "-top.html";
+	b1Link.href = linkDir + catIndex + "-" + colorIndex + "-bottom.html";
+	f1Link.href = linkDir + catIndex + "-" + colorIndex + "-foot.html";
+
 }
