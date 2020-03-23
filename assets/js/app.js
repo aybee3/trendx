@@ -1,39 +1,37 @@
 // Render the color wheel
 var colorPicker = new iro.ColorPicker('#colorPicker', {
-	width: 280,
-	color: 'rgb(61, 219, 133)',
-	borderWidth: 5,
-	borderColor: '#fff'
+	width       : 280,
+	color       : 'rgb(61, 219, 133)',
+	borderWidth : 5,
+	borderColor : '#fff'
 });
-
 
 // ========== Probe elements ==========
 const svg = document.querySelector('#dynamicSVG');
 const colorWheel = document.querySelector('#userInput');
-const navTitle = document.querySelector("#navTitle");
+const navTitle = document.querySelector('#navTitle');
 const hamburg = document.querySelector('.icofont-navigation-menu');
 const toTopBtn = document.querySelector('.back-to-top');
 
-const t1ImageCard = document.querySelector("#topwear-1-img-card");
-const b1ImageCard = document.querySelector("#bottomwear-1-img-card");
-const f1ImageCard = document.querySelector("#footwear-1-img-card");
+const t1ImageCard = document.querySelector('#topwear-1-img-card');
+const b1ImageCard = document.querySelector('#bottomwear-1-img-card');
+const f1ImageCard = document.querySelector('#footwear-1-img-card');
 
-const t1ImageExp = document.querySelector("#topwear-1-img-expand");
-const b1ImageExp = document.querySelector("#bottomwear-1-img-expand");
-const f1ImageExp = document.querySelector("#footwear-1-img-expand");
+const t1ImageExp = document.querySelector('#topwear-1-img-expand');
+const b1ImageExp = document.querySelector('#bottomwear-1-img-expand');
+const f1ImageExp = document.querySelector('#footwear-1-img-expand');
 
-const t1Link = document.querySelector("#topwear-1-link");
-const b1Link = document.querySelector("#bottomwear-1-link");
-const f1Link = document.querySelector("#footwear-1-link");
-
+const t1Link = document.querySelector('#topwear-1-link');
+const b1Link = document.querySelector('#bottomwear-1-link');
+const f1Link = document.querySelector('#footwear-1-link');
 
 // ========== Remove "X" on small screens ==========
 var w = window.innerWidth;
 var h = window.innerHeight;
-if (h > w) { // on portrait
+if (h > w) {
+	// on portrait
 	svg.style.display = 'none';
 }
-
 
 // ========== Log user input ==========
 
@@ -41,16 +39,14 @@ if (h > w) { // on portrait
 colorWheel.addEventListener('touchend', registerColor);
 colorWheel.addEventListener('mouseup', registerColor);
 
-
 // Register category
 var catIndex; // category index
 // 1 = male, 2 = female, 3 = kids
 
-document.querySelector("#category").onchange = function () {
+document.querySelector('#category').onchange = function() {
 	catIndex = this.selectedIndex;
 	registerColor();
 };
-
 
 // Function to log on event
 var selectedHEX; // user input
@@ -74,19 +70,23 @@ function registerColor(e) {
 	console.log(`Category index: ${catIndex}`);
 	console.log(`Hue: ${hue}`);
 	console.log(mainColor);
-	console.log("-       x        -\n-       x        -");
+	console.log('-       x        -\n-       x        -');
 }
-
 
 // ========== Find complementary ==========
 var hue;
 
 function HEXtoHUE(hex) {
-
 	// HEX to RGB
-	var rgb = 'rgb(' + (hex = hex.replace('#', '')).match(new RegExp('(.{' + hex.length / 3 + '})', 'g')).map(function (l) {
-		return parseInt(hex.length % 2 ? l + l : l, 16);
-	}).join(',') + ')';
+	var rgb =
+		'rgb(' +
+		(hex = hex.replace('#', ''))
+			.match(new RegExp('(.{' + hex.length / 3 + '})', 'g'))
+			.map(function(l) {
+				return parseInt(hex.length % 2 ? l + l : l, 16);
+			})
+			.join(',') +
+		')';
 
 	// Get array of RGB values
 	rgb = rgb.replace(/[^\d,]/g, '').split(',');
@@ -97,20 +97,21 @@ function HEXtoHUE(hex) {
 
 	console.log(`RGB: ${r} ${g} ${b}`);
 
-
 	// RGB to HSB
 	r /= 255.0;
 	g /= 255.0;
 	b /= 255.0;
 	var max = Math.max(r, g, b);
 	var min = Math.min(r, g, b);
-	var h, s, l = (max + min) / 2.0;
+	var h,
+		s,
+		l = (max + min) / 2.0;
 
 	if (max == min) {
 		h = s = 0; //achromatic
 	} else {
 		var d = max - min;
-		s = (l > 0.5 ? d / (2.0 - max - min) : d / (max + min));
+		s = l > 0.5 ? d / (2.0 - max - min) : d / (max + min);
 
 		if (max == r && g >= b) {
 			h = 1.0472 * (g - b) / d;
@@ -127,104 +128,103 @@ function HEXtoHUE(hex) {
 	return h;
 }
 
-
 // ========== Categorize colors ============
 function colorCategory(hue) {
 	if (hue >= 330 || hue < 10) {
-		mainColor = "red";
+		mainColor = 'red';
 		colorIndex = 0;
 	} else if (hue >= 10 && hue < 30) {
-		mainColor = "orange";
+		mainColor = 'orange';
 		colorIndex = 1;
 	} else if (hue >= 30 && hue < 70) {
-		mainColor = "yellow";
+		mainColor = 'yellow';
 		colorIndex = 2;
 	} else if (hue >= 70 && hue < 170) {
-		mainColor = "green";
+		mainColor = 'green';
 		colorIndex = 3;
 	} else if (hue >= 170 && hue < 260) {
-		mainColor = "blue";
+		mainColor = 'blue';
 		colorIndex = 4;
 	} else if (hue >= 260 && hue < 295) {
-		mainColor = "purple";
+		mainColor = 'purple';
 		colorIndex = 5;
 	} else {
-		mainColor = "pink";
+		mainColor = 'pink';
 		colorIndex = 6;
 	}
 }
 
-var imageDir = "https://raw.githubusercontent.com/Az-21/trendx/master/assets/img/clothes/";
+var imageDir = 'https://raw.githubusercontent.com/Az-21/trendx/master/assets/img/clothes/';
 
 function contentReplacer(catIndex, colorIndex) {
+	if (catIndex != undefined) {
+		// wait for user input in category section
 
-	if (catIndex != undefined) { // wait for user input in category section
-
-		if (catIndex == 1) { // 1 = male
+		if (catIndex == 1) {
+			// 1 = male
 			t1Link.href = hrefLink.maleTop[colorIndex];
 			b1Link.href = hrefLink.maleBottom[colorIndex];
 			f1Link.href = hrefLink.maleFoot[colorIndex];
-		} else if (catIndex == 2) { // 2 = felmale
+		} else if (catIndex == 2) {
+			// 2 = felmale
 			t1Link.href = hrefLink.femaleTop[colorIndex];
 			b1Link.href = hrefLink.femaleBottom[colorIndex];
 			f1Link.href = hrefLink.femakeFoot[colorIndex];
-		} else { // catchall (hopefully 3) = kids
+		} else {
+			// catchall (hopefully 3) = kids
 			t1Link.href = hrefLink.kidsTop[colorIndex];
 			b1Link.href = hrefLink.kidsBottom[colorIndex];
 			f1Link.href = hrefLink.kidsFoot[colorIndex];
 		}
 
-
 		// Replace images
-		t1ImageCard.src = imageDir + catIndex + "-" + colorIndex + "-top.jpg";
-		b1ImageCard.src = imageDir + catIndex + "-" + colorIndex + "-bottom.jpg";
-		f1ImageCard.src = imageDir + catIndex + "-" + colorIndex + "-foot.jpg";
+		t1ImageCard.src = imageDir + catIndex + '-' + colorIndex + '-top.jpg';
+		b1ImageCard.src = imageDir + catIndex + '-' + colorIndex + '-bottom.jpg';
+		f1ImageCard.src = imageDir + catIndex + '-' + colorIndex + '-foot.jpg';
 
-		t1ImageExp.href = imageDir + catIndex + "-" + colorIndex + "-top.jpg";
-		b1ImageExp.href = imageDir + catIndex + "-" + colorIndex + "-bottom.jpg";
-		f1ImageExp.href = imageDir + catIndex + "-" + colorIndex + "-foot.jpg";
+		t1ImageExp.href = imageDir + catIndex + '-' + colorIndex + '-top.jpg';
+		b1ImageExp.href = imageDir + catIndex + '-' + colorIndex + '-bottom.jpg';
+		f1ImageExp.href = imageDir + catIndex + '-' + colorIndex + '-foot.jpg';
 	}
-
 }
-
 
 // ==================  HREF Data  =========================
 
 var hrefLink = {
-	maleTop: [
-		"https://www.amazon.in/Zombom-Sleeve-Cotton-Casual-Shirt/dp/B078V8L62T/", // 0 = red
-		"link2"
+	maleTop      : [
+		'https://www.amazon.in/Zombom-Sleeve-Cotton-Casual-Shirt/dp/B078V8L62T/', // 0 = red
+		'link2'
 	],
 
-	maleBottom: [
-		"https://www.amazon.in/Wrangler-Mens-Relaxed-Jeans-W33927W2201Z036034_Jsw-Black_36W/dp/B07T5F6XXV/",
+	maleBottom   : [
+		'https://www.amazon.in/Wrangler-Mens-Relaxed-Jeans-W33927W2201Z036034_Jsw-Black_36W/dp/B07T5F6XXV/'
 	],
 
-	maleFoot: [
-		"https://www.amazon.in/Adidas-Visgre-Running-Shoes-8-CJ0034/dp/B07B4LF2RJ/",
+	maleFoot     : [
+		'https://www.amazon.in/Adidas-Visgre-Running-Shoes-8-CJ0034/dp/B07B4LF2RJ/'
 	],
 
-	femaleTop: [
-		"#",
+	femaleTop    : [
+		'#'
 	],
 
-	femaleBottom: [
-		"#",
+	femaleBottom : [
+		'#'
 	],
 
-	femaleFoot: [
-		"#",
+	femaleFoot   : [
+		'#'
 	],
 
-	kidsTop: [
-		"#",
+	kidsTop      : [
+		'#'
 	],
 
-	kidsBottom: [
-		"#",
+	kidsBottom   : [
+		'#'
 	],
 
-	kidsFoot: [
-		"#",
+	kidsFoot     : [
+		'#'
 	]
-}
+};
