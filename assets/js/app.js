@@ -154,7 +154,7 @@ function colorCategory(hue) {
 	}
 }
 
-var imageDir = "./assets/img/clothes/";
+var imageDir = "https://raw.githubusercontent.com/Az-21/trendx/master/assets/img/clothes/";
 var linkDir = "./assets/img/clothes/links/"
 
 
