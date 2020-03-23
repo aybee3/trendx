@@ -155,16 +155,25 @@ function colorCategory(hue) {
 }
 
 var imageDir = "https://raw.githubusercontent.com/Az-21/trendx/master/assets/img/clothes/";
-var linkDir = "https://github.com/Az-21/trendx/tree/master/assets/img/clothes/links/"
-
 
 function contentReplacer(catIndex, colorIndex) {
 
 	if (catIndex != undefined) { // wait for user input in category section
-		// Replace links
-		t1Link.href = linkDir + catIndex + "-" + colorIndex + "-top.html";
-		b1Link.href = linkDir + catIndex + "-" + colorIndex + "-bottom.html";
-		f1Link.href = linkDir + catIndex + "-" + colorIndex + "-foot.html";
+
+		if (catIndex == 1) { // 1 = male
+			t1Link.href = hrefLink.maleTop[colorIndex];
+			b1Link.href = hrefLink.maleBottom[colorIndex];
+			f1Link.href = hrefLink.maleFoot[colorIndex];
+		} else if (catIndex == 2) { // 2 = felmale
+			t1Link.href = hrefLink.femaleTop[colorIndex];
+			b1Link.href = hrefLink.femaleBottom[colorIndex];
+			f1Link.href = hrefLink.femakeFoot[colorIndex];
+		} else { // catchall (hopefully 3) = kids
+			t1Link.href = hrefLink.kidsTop[colorIndex];
+			b1Link.href = hrefLink.kidsBottom[colorIndex];
+			f1Link.href = hrefLink.kidsFoot[colorIndex];
+		}
+
 
 		// Replace images
 		t1ImageCard.src = imageDir + catIndex + "-" + colorIndex + "-top.jpg";
@@ -175,4 +184,47 @@ function contentReplacer(catIndex, colorIndex) {
 		b1ImageExp.href = imageDir + catIndex + "-" + colorIndex + "-bottom.jpg";
 		f1ImageExp.href = imageDir + catIndex + "-" + colorIndex + "-foot.jpg";
 	}
+
+}
+
+
+// ==================  HREF Data  =========================
+
+var hrefLink = {
+	maleTop: [
+		"https://www.amazon.in/Zombom-Sleeve-Cotton-Casual-Shirt/dp/B078V8L62T/", // 0 = red
+		"link2"
+	],
+
+	maleBottom: [
+		"https://www.amazon.in/Wrangler-Mens-Relaxed-Jeans-W33927W2201Z036034_Jsw-Black_36W/dp/B07T5F6XXV/",
+	],
+
+	maleFoot: [
+		"https://www.amazon.in/Adidas-Visgre-Running-Shoes-8-CJ0034/dp/B07B4LF2RJ/",
+	],
+
+	femaleTop: [
+		"#",
+	],
+
+	femaleBottom: [
+		"#",
+	],
+
+	femaleFoot: [
+		"#",
+	],
+
+	kidsTop: [
+		"#",
+	],
+
+	kidsBottom: [
+		"#",
+	],
+
+	kidsFoot: [
+		"#",
+	]
 }
