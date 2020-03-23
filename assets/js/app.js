@@ -155,7 +155,7 @@ function colorCategory(hue) {
 }
 
 var imageDir = "https://raw.githubusercontent.com/Az-21/trendx/master/assets/img/clothes/";
-var linkDir = "./assets/img/clothes/links/"
+var linkDir = "https://github.com/Az-21/trendx/tree/master/assets/img/clothes/links/"
 
 
 function contentReplacer(catIndex, colorIndex) {
