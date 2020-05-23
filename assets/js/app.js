@@ -1,9 +1,9 @@
 // Render the color wheel
 var colorPicker = new iro.ColorPicker('#colorPicker', {
-	width       : 280,
-	color       : 'rgb(61, 219, 133)',
-	borderWidth : 5,
-	borderColor : '#fff'
+	width: 280,
+	color: 'rgb(61, 219, 133)',
+	borderWidth: 5,
+	borderColor: '#fff'
 });
 
 // ========== Probe elements ==========
@@ -43,7 +43,7 @@ colorWheel.addEventListener('mouseup', registerColor);
 var catIndex; // category index
 // 1 = male, 2 = female, 3 = kids
 
-document.querySelector('#category').onchange = function() {
+document.querySelector('#category').onchange = function () {
 	catIndex = this.selectedIndex;
 	registerColor();
 };
@@ -81,11 +81,11 @@ function HEXtoHUE(hex) {
 	var rgb =
 		'rgb(' +
 		(hex = hex.replace('#', ''))
-			.match(new RegExp('(.{' + hex.length / 3 + '})', 'g'))
-			.map(function(l) {
-				return parseInt(hex.length % 2 ? l + l : l, 16);
-			})
-			.join(',') +
+		.match(new RegExp('(.{' + hex.length / 3 + '})', 'g'))
+		.map(function (l) {
+			return parseInt(hex.length % 2 ? l + l : l, 16);
+		})
+		.join(',') +
 		')';
 
 	// Get array of RGB values
@@ -191,40 +191,67 @@ function contentReplacer(catIndex, colorIndex) {
 // ==================  HREF Data  =========================
 
 var hrefLink = {
-	maleTop      : [
+	maleTop: [
 		'https://www.amazon.in/Zombom-Sleeve-Cotton-Casual-Shirt/dp/B078V8L62T/', // 0 = red
-		'link2'
+
+		'https://www.myntra.com/shirts/solly-jeans-co/solly-jeans-co-men-orange-regular-fit-printed-casual-shirt/11502300/buy',
+
+		'https://www.myntra.com/shirts/united-colors-of-benetton/united-colors-of-benetton-men-yellow-regular-fit-solid-casual-shirt/9218245/buy',
+
+		'https://www.myntra.com/shirts/calvin-klein-jeans/calvin-klein-jeans-men-green-regular-fit-solid-casual-shirt/9591147/buy',
+
+		'https://www.myntra.com/shirts/allen-solly/allen-solly-men-blue--white-printed-sport-fit-casual-shirt/11518892/buy',
+
 	],
 
-	maleBottom   : [
-		'https://www.amazon.in/Wrangler-Mens-Relaxed-Jeans-W33927W2201Z036034_Jsw-Black_36W/dp/B07T5F6XXV/'
+	maleBottom: [
+		'https://www.amazon.in/Wrangler-Mens-Relaxed-Jeans-W33927W2201Z036034_Jsw-Black_36W/dp/B07T5F6XXV/',
+
+		'https://www.myntra.com/jeans/us-polo-assn-denim-co/us-polo-assn-denim-co-men-blue-delta-slim-fit-mid-rise-clean-look-stretchable-jeans/11453226/buy',
+
+		'https://www.myntra.com/trousers/allen-solly/allen-solly-men-white-smart-slim-fit-solid-chinos/10820294/buy',
+
+		'https://www.myntra.com/jeans/us-polo-assn-denim-co/us-polo-assn-denim-co-men-blue-skinny-fit-mid-rise-clean-look-stretchable-jeans/8600053/buy',
+
+		'https://www.myntra.com/trousers/peter-england/peter-england-men-brown-slim-fit-solid-chinos/2481552/buy',
+
 	],
 
-	maleFoot     : [
-		'https://www.amazon.in/Adidas-Visgre-Running-Shoes-8-CJ0034/dp/B07B4LF2RJ/'
+	maleFoot: [
+		'https://www.amazon.in/Adidas-Visgre-Running-Shoes-8-CJ0034/dp/B07B4LF2RJ/',
+
+		'https://www.myntra.com/casual-shoes/converse/converse-unisex-white-sneakers/8552735/buy',
+
+		'https://www.myntra.com/casual-shoes/hm/hm-men-black-solid-loafers/10458796/buy',
+
+		'https://www.myntra.com/casual-shoes/roadster/roadster-men-grey-solid-sneakers/10616582/buy',
+
+		'https://www.myntra.com/casual-shoes/v8-by-ruosh/v8-by-ruosh-men-brown-leather-loafers/10990656/buy',
+
+
 	],
 
-	femaleTop    : [
+	femaleTop: [
 		'#'
 	],
 
-	femaleBottom : [
+	femaleBottom: [
 		'#'
 	],
 
-	femaleFoot   : [
+	femaleFoot: [
 		'#'
 	],
 
-	kidsTop      : [
+	kidsTop: [
 		'#'
 	],
 
-	kidsBottom   : [
+	kidsBottom: [
 		'#'
 	],
 
-	kidsFoot     : [
+	kidsFoot: [
 		'#'
 	]
 };
