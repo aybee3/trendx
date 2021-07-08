@@ -2,12 +2,7 @@
 
 A color theory based apparel recommender. A product design project for Electrical and Electronics Department of MS Ramaiah Institute of Technology.
 
-## Tools Used
-
-![HTML](https://github.com/Az-21/az-21.github.io/blob/master/assets/img/badges/html.svg)
-![CSS](https://github.com/Az-21/az-21.github.io/blob/master/assets/img/badges/css.svg)
-![BS](https://github.com/Az-21/az-21.github.io/blob/master/assets/img/badges/bootstrap.svg)
-![Typescript](https://github.com/Az-21/az-21.github.io/blob/master/assets/img/badges/typescript.svg)
+# ⚠ Under Construction ⚠
 
 
 ## Working
