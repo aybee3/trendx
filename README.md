@@ -26,11 +26,11 @@ Items selected from our database are then populated on the webpage
 
 ## Contributors
 
-![Abdul](https://github.com/Az-21/az-21.github.io/blob/master/assets/img/badges/c1.svg)
+![Abdul](https://github.com/Az-21/trendx/blob/master/assets/img/badges/c1.svg)
 
-![Abhishek](https://github.com/Az-21/az-21.github.io/blob/master/assets/img/badges/c3.svg)
+![Abhishek](https://github.com/Az-21/trendx/blob/master/assets/img/badges/c3.svg)
 
-![Aditya](https://github.com/Az-21/az-21.github.io/blob/master/assets/img/badges/c5.svg)
+![Aditya](https://github.com/Az-21/trendxblob/master/assets/img/badges/c5.svg)
 
  ## Credits
 
