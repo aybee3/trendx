@@ -2,9 +2,6 @@
 
 A color theory based apparel recommender. A product design project for Electrical and Electronics Department of MS Ramaiah Institute of Technology.
 
-# ⚠ Under Construction ⚠
-
-
 ## Working
 
 #### User Input
@@ -39,7 +36,7 @@ Items selected from our database are then populated on the webpage
  * [iro.js](https://github.com/jaames/iro.js): JavaScript based color picker widget
  * [Ninestars](https://bootstrapmade.com/demo/Ninestars/): a Bootstrap template
 
-![<3](https://github.com/Az-21/az-21.github.io/blob/master/assets/img/badges/bwl.svg)
+![<3](https://github.com/Az-21/trendx/blob/master/assets/img/badges/bwl.svg)
 
-![<3](https://github.com/Az-21/az-21.github.io/blob/master/assets/img/badges/msP.svg)
+![<3](https://github.com/Az-21/trendx/blob/master/assets/img/badges/msP.svg)
 
