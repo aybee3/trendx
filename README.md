@@ -27,7 +27,7 @@ Items selected from our database are then populated on the webpage
 
 ![Abhishek](https://github.com/Az-21/trendx/blob/master/assets/img/badges/c3.svg)
 
-![Aditya](https://github.com/Az-21/trendxblob/master/assets/img/badges/c5.svg)
+![Aditya](https://github.com/Az-21/trendx/blob/master/assets/img/badges/c5.svg)
 
  ## Credits
 
